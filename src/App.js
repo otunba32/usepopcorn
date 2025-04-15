@@ -69,6 +69,9 @@ export default function App() {
     setSelectedId(null);
   }
 
+  function handleAddWatched(movie) {
+    setWatched(watched => [...watched, movie]);
+  }
 
 
   useEffect(function () {
@@ -122,7 +125,7 @@ export default function App() {
 
         <Box>
           {
-            selectedId ? (<MovieDetails selectedId={selectedId} onCloseMovie={handleCloseMovie} />) : (
+            selectedId ? (<MovieDetails selectedId={selectedId} onCloseMovie={handleCloseMovie} onAddWatched={handleAddWatched} watched={watched} />) : (
               <>
                 <WatchedSummary watched={watched} />
                 <WatchedMoviesList watched={watched} />
@@ -264,14 +267,25 @@ function WatchedBox() {
 }
 */
 
-function MovieDetails({ selectedId, onCloseMovie }) {
+function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [userRating, setUserRating] = useState('')
+
+  const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId);
+
 
   const { Title: title, Year: year, Poster: poster, Runtime: runtime, imdbRating, Plot: plot, Released: released, Actors: actors, Director: director, Genre: genre } = movie;
 
-  console.log(title, year);
+  function handleAdd() {
+    const newWatchedMovie = {
+      imdbID: selectedId,
+      title, year, poster, runtime: Number(runtime.split(" ").at(0)), imdbRating: Number(imdbRating), userRating,
+    }
 
+    onAddWatched(newWatchedMovie)
+    onCloseMovie();
+  }
 
 
   useEffect(function () {
@@ -314,7 +328,8 @@ function MovieDetails({ selectedId, onCloseMovie }) {
         </header>
         <section>
           <div className="rating">
-            <StarRating maxRating={10} size={23} />
+            {!isWatched ? <> <StarRating maxRating={10} size={23} onSetRating={setUserRating} />
+              {userRating > 0 && (<button className="btn-add" onClick={handleAdd}>+ Add to list</button>)} </> : (<p>You rated this movie {watched.find(movie => movie.imdbID === selectedId)?.userRating} ⭐</p>)}
 
           </div>
           <p>
@@ -375,9 +390,9 @@ function WatchedMoviesList({ watched }) {
 function WatchedMovie({ movie }) {
   return (
     <li >
-      <img src={movie.Poster} alt={`Poster of the movie titled ${movie.Title}`} />
+      <img src={movie.poster} alt={`Poster of the movie titled ${movie.title}`} />
 
-      <h3>{movie.Title}</h3>
+      <h3>{movie.title}</h3>
       <div>
         <p>
           <span>⭐️</span>
