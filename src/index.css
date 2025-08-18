@@ -50,11 +50,11 @@ body {
 }
 
 .box {
-  width: 42rem;
+  width: 100%;
   max-width: 42rem;
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
-  /* overflow: scroll;     */
+  overflow: auto;
   position: relative;
 }
 
@@ -283,7 +283,7 @@ body {
 .rating {
   background-color: var(--color-background-100);
   border-radius: 0.9rem;
-  padding: 14px;
+  padding: 2rem 2.4rem;
   margin-bottom: 0.8rem;
   font-weight: 600;
   display: flex;
@@ -339,11 +339,10 @@ body {
   justify-content: center;
 }
 
-/* 
+/*
 SPACING SYSTEM (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
 
 FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98 */
-
-
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98
+*/
