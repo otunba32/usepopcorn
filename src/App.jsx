@@ -90,7 +90,7 @@ export default function App() {
         setIsLoading(true);
         setError("")
 
-        const res = await fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=${query}`, { signal: controller.signal });
+        const res = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`, { signal: controller.signal });
 
         // Error msg to handle error
         if (!res.ok) throw new Error("Something went wrong with fetching movies");
