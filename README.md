@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# 🎬 usePopcorn
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A movie search and watchlist web app built with **React + Vite**.  
+Search movies from the **OMDb API**, view details, and manage your personal watched list.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
+- 🔍 Search movies in real time from OMDb API
+- 📃 View search results with posters, titles, and release years
+- 🎞 View movie details (ratings, runtime, etc.)
+- ⭐️ Rate movies and add them to your **Watched list**
+- 🗑 Remove movies from your Watched list
+- 📊 Get a quick summary (average rating, runtime, etc.)
+- ⚡️ Fast dev experience powered by **Vite**
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack
+- [React 18](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [OMDb API](https://www.omdbapi.com/) for movie data
+- CSS (custom styles)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📂 Project Structure
+src/
+├── App.jsx # Main app component
+├── starRating.jsx # Star rating component
+├── index.css # Global styles
+└── main.jsx # Entry point
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ⚙️ Setup & Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Clone the repo
+```bash
+git clone https://github.com/otunba32/usepopcorn.git
+cd usepopcorn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies
+npm install
 
-### `npm run eject`
+3. Set up environment variables
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Create a .env file in the root folder and add your OMDb API key:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+VITE_API_KEY=your_api_key_here
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🔑 You can get a free API key from OMDb API.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Run the app
+npm run dev
 
-## Learn More
+This will start the app at http://localhost:5173.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+📦 Build for production
+npm run build
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Preview production build:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm run preview
 
-### Analyzing the Bundle Size
+📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This project is licensed under the MIT License.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🙌 Acknowledgements
 
-### Advanced Configuration
+Jonas Schmedtmann’s Ultimate React Course (inspiration for app structure)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+OMDb API for movie data
