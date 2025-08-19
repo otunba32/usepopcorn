@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import StarRating from "./starRating";
 
 // ✅ Use Vite env variable
-const API_KEY = import.meta.env.VITE_API_KEY;
+// const API_KEY = import.meta.env.VITE_API_KEY;
+// ✅ Use Vite env variable (descriptive name)
+const API_KEY = import.meta.env.VITE_OMDB_KEY;
 
 // Utility
 const average = (arr) =>
